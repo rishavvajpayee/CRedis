@@ -8,6 +8,8 @@
 #include <string.h>
 #include "handle.h"
 
+#define PROMPT "redis > "
+
 void multiplexing(char *host, int port){
     int server_fd;
     server_fd = socket(AF_INET, SOCK_STREAM, 0);
@@ -63,6 +65,7 @@ void multiplexing(char *host, int port){
                             fd_max = new_socket;
                         }
                         printf("New connection accepted\n");
+                        send(new_socket, PROMPT, strlen(PROMPT), 0);
                     }
                 } else {
                     // Handle data from a client
@@ -83,7 +86,7 @@ void multiplexing(char *host, int port){
                         // handle the respose separately
                         char *handled_resp = handle(buffer, i, server_fd, master_set, response);
                         send(i, handled_resp, strlen(handled_resp), 0);
-                        printf("Response sent\n");
+                        send(i, PROMPT, strlen(PROMPT), 0);
                     }
                 }
             }
