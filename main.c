@@ -4,9 +4,9 @@
 #include "domain/multiplexing.h"
 
 int main(int argc, char *argv[]){
-    char *port_str = getenv("PORT");
+    char *port_str = "5678";
     int port;
-    char *host = getenv("HOST");
+    char *host = "127.0.0.1";
 
     if (port_str == NULL || host == NULL){
         fprintf(stderr, "Env Variables HOST & PORT are not set through ENV");
