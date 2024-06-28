@@ -23,5 +23,5 @@ This project is a basic implementation of Redis, developed to deepen understandi
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/basic-redis-c.git
-   cd basic-redis-c
+   git clone https://github.com/rishavvajpayee/CRedis.git
+   cd Credis/
