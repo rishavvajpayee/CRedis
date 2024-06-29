@@ -26,7 +26,7 @@ char *handle(char *buffer, int client_socket, int server_fd, fd_set master_set, 
         if (sscanf(buffer, "SET %s %s", key, value) == 2){
             if (kv_count < 100){
                 strncpy(kv_store[kv_count].key, key, MAX_KEY_LEN - 1);
-                strncpy(kv_store[kv_count].value, value, MAX_VALUE_LEN - 1);
+                strncpy(kv_store[kv_count].value, value, MAX_VALUE_LEN - 1);                        
                 kv_count++;
 
                 strcpy(result, "OK\n");
