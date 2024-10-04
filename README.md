@@ -1,4 +1,4 @@
-# Basic Redis Implementation in C
+## Basic Redis Implementation in C
 
 ## Overview
 
